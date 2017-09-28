@@ -1,0 +1,57 @@
+{
+  "name": "express-api-versioning",
+  "version": "1.0.0",
+  "description": "Express API versioning is an express middleware that dynamically loads different API versions seamlessly depending on the version number specified in the request url.",
+  "bugs": "https://github.com/adesege/express-api-versioning/issues",
+  "peerDependencies": {
+    "express": "4.x"
+  },
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adesege/express-api-versioning.git"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-register src/test/**/**.js",
+    "build": "rm -rf ./build && babel --watch src/ --out-dir build/",
+    "prepublish": "rm -rf ./build && babel src/ --out-dir build/",
+    "coveralls": "NODE_ENV=test nyc npm test && nyc report --reporter=lcov --reporter=text --reporter=lcovonly || coveralls"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "versioning"
+  ],
+  "author": {
+    "name": "Fadojutimi Temitayo Olusegun",
+    "email": "fadojutimitemitayo@gmail.com",
+    "url": "http://twitter.com/adesege_"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.5.3",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^11.2.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "chai": "^4.1.2",
+<<<<<<< HEAD
+    "ejs": "^2.5.7",
+=======
+>>>>>>> 69b9a79... release v1.0.0
+    "express": "^4.15.5",
+    "lodash": "^4.17.4",
+    "supertest": "^3.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "src/test/**/**.js"
+    ]
+  }
+}
