@@ -1,4 +1,3 @@
-import mergeConfig from 'lodash/merge';
 import path from 'path';
 import fs from 'fs';
 import { Exception } from './utils/exception';
@@ -6,14 +5,14 @@ import { Exception } from './utils/exception';
 export default (config) => {
   // define default configuration options
   const defaultConfig = {
-    test: /\/api\/(v[0-9]+)[a-z0-9/_+-]*/,
+    test: /\/api\/(v[0-9]+).*/,
     entryPoint: 'app.js',
     apiPath: '',
     instance: null
   };
 
   // merge default configuration options with user defined config options
-  const mergedConfig = mergeConfig(defaultConfig, config);
+  const mergedConfig = Object.assign({}, defaultConfig, config);
 
   // get config options from merged configs
   const {

@@ -42,7 +42,6 @@
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
     "express": "^4.15.5",
-    "lodash": "^4.17.4",
     "supertest": "^3.0.0"
   },
   "nyc": {
