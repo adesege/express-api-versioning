@@ -1,6 +1,6 @@
 {
   "name": "express-api-versioning",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Express API versioning is an express middleware that dynamically loads different API versions seamlessly depending on the version number specified in the request url.",
   "bugs": "https://github.com/adesege/express-api-versioning/issues",
   "peerDependencies": {
