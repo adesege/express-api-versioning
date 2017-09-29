@@ -29,7 +29,7 @@ It is written in Javascript ES6 syntax and it is further transpiled down to Java
 app.use(expressApiVersioning({
   	instance: app, // passes an instance of express to the entry point
   	apiPath: path.join(__dirname, './api'), // absolute path to the api directory
-	test: /\/api\/(v[0-9]+)[a-z0-9/_+-]*/, // regular expression to get the version number from the url
+	test: /\/api\/(v[0-9]+).*/, // regular expression to get the version number from the url
 	entryPoint: 'app.js' // entry point exports a function which takes an instance of express as parameter.
 }));
 ```
@@ -39,7 +39,7 @@ app.use(expressApiVersioning({
 app.use(expressApiVersioning({
 	instance: app, // passes an instance of express to the entry point
 	apiPath: path.join(__dirname, './api'), // absolute path to the api directory
-	test: /\/endpoint\/(v[0-9]+)[a-z0-9/_+-]*/, // regular expression to get the version number from the url,
+	test: /\/endpoint\/(v[0-9]+).*/, // regular expression to get the version number from the url,
 	entryPoint: 'index.js' // entry point exports a function which takes an instance of express as parameter.
 }));
 ```
@@ -62,7 +62,7 @@ Please use the [issues](/issues) page to report an issue.
 
 | Configuration item | Default | Description |
 | ------ | ------ | ------- |
-| test | /\/api\/(v[0-9]+)[a-z0-9/_+-]*/ | Regular expression to get the version number from the request url. It gets the version number from the first group of the regex match.
+| test | `/\/api\/(v[0-9]+)[a-z0-9/_+-]*/`| Regular expression to get the version number from the request url. It gets the version number from the first group of the regex match.
 | entryPoint | app.js | Entry point for each api version. It exports a function which takes an instance of express as parameter.
 | apiPath | empty string | Absolute path to each api version container/directory. This is usually `path.join(__dirname, './api')`.
 | instance | null | An instance of express app which will be passed down to the entry point for usage.
@@ -77,7 +77,7 @@ Please use the [issues](/issues) page to report an issue.
 
 # Testing
 
-If you will like to test this package,
+To test this package,
 - Clone this repo or `npm install express-api-versioning`
 - cd into the package directory and run `npm install`
 - Then run `npm test` to run the test.
