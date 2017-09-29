@@ -89,11 +89,7 @@ To contribute,
 1. Fork the project
 1. Create a feature branch, branch away from `master`
 1. Write tests, using `Mocha and Chai` or any other testing frameworks, and code
-<<<<<<< HEAD
-1. If you have multiple commits please combine them into a few logically organized commits by [squashing them][git-squash]
-=======
 1. If you have multiple commits please combine them into a few logically organized commits by [squashing them](git-squash)
->>>>>>> 69b9a79... release v1.0.0
 1. Push the commit(s) to your fork
 1. Submit a merge request (MR) to the `master` branch
 1. The MR title should describe the change you want to make

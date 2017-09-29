@@ -41,10 +41,6 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
-<<<<<<< HEAD
-    "ejs": "^2.5.7",
-=======
->>>>>>> 69b9a79... release v1.0.0
     "express": "^4.15.5",
     "lodash": "^4.17.4",
     "supertest": "^3.0.0"
