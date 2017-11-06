@@ -12,7 +12,7 @@
     "url": "https://github.com/adesege/express-api-versioning.git"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-register src/test/**/**.js",
+    "test": "mocha --compilers js:babel-register src/test/**.spec.js --timeout 100000",
     "build": "rm -rf ./build && babel --watch src/ --out-dir build/",
     "prepublish": "rm -rf ./build && babel src/ --out-dir build/",
     "coveralls": "NODE_ENV=test nyc npm test && nyc report --reporter=lcov --reporter=text --reporter=lcovonly || coveralls"
@@ -20,7 +20,11 @@
   "keywords": [
     "express",
     "api",
-    "versioning"
+    "versioning",
+    "express api versioning",
+    "express-api-versioning",
+    "version",
+    "expressjs"
   ],
   "author": {
     "name": "Fadojutimi Temitayo Olusegun",
@@ -39,6 +43,8 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.2",
     "express": "^4.15.5",
