@@ -11,7 +11,7 @@ Express API versioning is an express middleware that dynamically loads different
 It is written in Javascript ES6 syntax and it is further transpiled down to Javascript ES5 using babel.
 
 # What's new in v2
-- Version 2 introduces a new way to resolve errors using callback instead of using the `try` and `catch` block.
+- Version 2 introduces a new way to resolve errors using callback instead of the `try` and `catch` block.
 
 # Installation
 
@@ -28,24 +28,35 @@ It is written in Javascript ES6 syntax and it is further transpiled down to Java
 ` const expressApiVersioning = require('express-api-versioning');`
 
    ```js
-app.use(expressApiVersioning(
-	{
-  apiPath: path.join(__dirname, './api'),// absolute path to the api directory
-  test: /\/api\/(v[0-9]+).*/, // regular expression to get the version number from the url
-  entryPoint: 'index.js', // entry point exports a function which takes an instance of express as parameter.
-  instance: app // passes an instance of express to the entry point
+app.use(expressApiVersioning({
+		apiPath: path.join(__dirname, './api'),// absolute path to the api directory
+		test: /\/api\/(v[0-9]+).*/, // regular expression to get the version number from the url
+		entryPoint: 'index.js', // entry point exports a function which takes an instance of express as parameter.
+		instance: app // passes an instance of express to the entry point
 }, (error, req, res, next) => {
     // Do something here with the error
-    next(); // call the next middleware
+    next(); // calls the next middleware
   }));
 ```
 
 # Error Handling
 
+As of v2, the middleware returns an error object as the first parameter of the callback and has properties `code` and `message`.
+
 The middleware will throw an error when;
 1. the `apiPath` is not specified
 1. an express `instance` is not specified and not a function
 1. the api version cannot be found in the `api directory`.
+
+# Error Code
+
+| S/N | Code | Message |
+| --- | -------- | -------- |
+| 1. | 101 | You must explicitly specify a path to where the APIs reside |
+| 2. | 102 | You must explicitly set an instance of express |
+| 3. | 103 | Entry point not Found |
+| 4. | 104 | No version number found |
+| 5. | 105 | An instance of express must be a function but got type `${typeof instance}` |
 
 # Issue Reporting
 

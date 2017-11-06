@@ -62,16 +62,16 @@ export default (config, callback) => {
           require(fullPath)(instance);
         }
         return callback(null, httpRequest, httpResponse, next);
-        // next();
       }
       return callback({
         code: 103,
         message: 'Entry point not Found'
       }, httpRequest, httpResponse, next); // we can't find the entry point, throw an error
     }
+    // we can't find the version number from the url, throw an error
     return callback({
       code: 104,
       message: 'No version number found'
-    }, httpRequest, httpResponse, next); // we can't find the version number from the url, throw an error
+    }, httpRequest, httpResponse, next);
   };
 };
