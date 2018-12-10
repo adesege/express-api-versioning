@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-export default (config, callback) => {
+module.exports = (config, callback) => {
   // define default configuration options
   const defaultConfig = {
     test: /\/api\/(v[0-9]+).*/,
